@@ -3,7 +3,7 @@ syntax = "proto3";
 package RPCSync;
 
 service PingService {
-  rpc Ping(PingRequest) returns (PingResponse) {}
+   rpc Ping(PingRequest) returns (PingResponse) {}
 }
 
 enum State {

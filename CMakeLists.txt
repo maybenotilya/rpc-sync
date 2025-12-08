@@ -10,6 +10,7 @@ if(APPLE)
     list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/protobuf")
 endif()
 
+find_package(Protobuf CONFIG REQUIRED)
 find_package(Threads REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
