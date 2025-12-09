@@ -6,7 +6,16 @@
 1. Install `protoc` compiler and `grpc_cpp_plugin`. For example installation for Ubuntu:
 ```
 sudo apt update && sudo apt upgrade
-sudo apt install -y build-essential autoconf libtool pkg-config protobuf-compiler protobuf-compiler-grpc
+sudo apt install -y build-essential \
+                    autoconf \
+                    libtool \
+                    pkg-config \ 
+                    protobuf-compiler \ 
+                    protobuf-compiler-grpc \
+                    libprotobuf-dev \
+                    libprotoc-dev \
+                    libprotobuf-lite32t64 \
+                    libprotoc32t64
 ```
 
 2. Build gRPC C++ library from sources according to [guide](https://grpc.io/docs/languages/cpp/quickstart/)
