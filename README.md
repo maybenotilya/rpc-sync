@@ -14,9 +14,7 @@ sudo apt install -y build-essential \
                     protobuf-compiler-grpc \
                     libprotobuf-dev \
                     libprotoc-dev \
-                    libprotobuf-c-dev \
-                    libprotobuf-lite32t64 \
-                    libprotoc32t64
+                    libprotobuf-c-dev
 ```
 
 2. Build v1.60.0 gRPC C++ library from sources. Make sure to use 
