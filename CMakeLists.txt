@@ -10,6 +10,8 @@ if(APPLE)
     list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/protobuf")
 endif()
 
+list(APPEND CMAKE_PREFIX_PATH "$ENV{HOME}/.local")
+
 find_package(Protobuf CONFIG REQUIRED)
 message(STATUS "Using protobuf ${Protobuf_VERSION}")
 find_package(Threads REQUIRED)
