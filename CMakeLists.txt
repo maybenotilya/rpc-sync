@@ -11,8 +11,10 @@ if(APPLE)
 endif()
 
 find_package(Protobuf CONFIG REQUIRED)
+message(STATUS "Using protobuf ${Protobuf_VERSION}")
 find_package(Threads REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
+message(STATUS "Using gRPC ${gRPC_VERSION}")
 
 set(PROTO_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
 set(PROTO_FILES "${PROTO_PATH}/rpc_sync.proto")
