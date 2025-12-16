@@ -40,10 +40,10 @@
 # debug information files
 *.dwo
 
-# Protobuf
+# tirpc
 
-*.pb.cc
-*.pb.h
+state_*.c
+Makefile.state
 
 # CMake
 build

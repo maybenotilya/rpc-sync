@@ -1,5 +1,13 @@
+struct StateRequest {
+    int placeholder;
+};
+
+struct StateResponse {
+    int status;
+};
+
 program STATE_PROG {
     version STATE_VERS {
-        void STATE_PROC(void) = 1;
+        StateResponse Ping(StateRequest) = 1;
     } = 1;
 } = 0x20000001;
