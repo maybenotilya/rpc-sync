@@ -23,7 +23,7 @@ sudo systemctl status rpcbind
 rpcgen -C -M -a state.x
 ```
 
-4. Build app:
+4. Find there yoor tiprc includes are located and build the app. Likely they are in `/usr/include/tirpc`:
 
 ```
 g++ -o app app.cpp state_clnt.c state_xdr.c -I /usr/include/tirpc -ltirpc
