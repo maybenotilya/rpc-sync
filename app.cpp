@@ -9,6 +9,8 @@
 #define RUN_STATE_PROG 0x20000002
 #define SLEEP_STATE_PROG 0x20000001
 
+int const MAX_RETRIES = 10;
+
 char* startingState = "sleep";
 
 int GetSelfStateProg() {
@@ -109,6 +111,17 @@ void RunClient() {
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
     CLIENT* client = clnt_create(localhost, GetOtherStateProg(), STATE_VERS, "tcp");
+    int attempt = 0;
+    while (!client) {
+        std::cout << "Failed to create client attempt " << ++attempt << std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        if (attempt >= MAX_RETRIES) {
+            std::cout << "Failed to create client within " << MAX_RETRIES << " attempts"
+                      << std::endl;
+            return;
+        }
+        client = clnt_create(localhost, GetOtherStateProg(), STATE_VERS, "tcp");
+    }
     if (!client) {
         clnt_pcreateerror(localhost);
         return;
